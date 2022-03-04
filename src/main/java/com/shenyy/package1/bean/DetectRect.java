@@ -3,8 +3,8 @@ package com.shenyy.package1.bean;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-@ApiModel(value = "DetectMarker",description = "标记物检测框数据类")
-public class DetectMarker {
+@ApiModel(value = "DetectRect",description = "植株检测框数据类")
+public class DetectRect {
     @ApiModelProperty(value = "id")
     private Integer id;
     @ApiModelProperty(value = "左上角x坐标（pix）")
@@ -23,6 +23,10 @@ public class DetectMarker {
     private Double longitude;
     @ApiModelProperty(value = "图片id")
     private Double picId;
+    @ApiModelProperty(value = "种植区块id")
+    private Double blockId;
+    @ApiModelProperty(value = "生长阶段（{BEFORE_V1、V1、V2、V3、V4、AFTER_V4}）")
+    private String growthStage;
 
     public Integer getId() {
         return id;
@@ -94,5 +98,21 @@ public class DetectMarker {
 
     public void setPicId(Double picId) {
         this.picId = picId;
+    }
+
+    public Double getBlockId() {
+        return blockId;
+    }
+
+    public void setBlockId(Double blockId) {
+        this.blockId = blockId;
+    }
+
+    public String getGrowthStage() {
+        return growthStage;
+    }
+
+    public void setGrowthStage(String growthStage) {
+        this.growthStage = growthStage;
     }
 }

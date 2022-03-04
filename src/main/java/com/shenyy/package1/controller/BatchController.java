@@ -22,10 +22,10 @@ public class BatchController {
     //生产季编号，田间号，品种编号 => 批次编号列表
     @PostMapping(value = "/getBatchListBySFV")
     @ApiOperation(value = "获取批次列表", notes = "依据生产季&田间号&品种获取批次列表")
-    public ResultWrapper<List<String>> getBatchListBySFV(@ApiParam(value = "生产季编号") @RequestParam(value = "prodSeasonCode") String prodSeasonCode,
-                                                         @ApiParam(value = "田间号") @RequestParam(value = "fieldCode") String fieldCode,
-                                                         @ApiParam(value = "品种编号") @RequestParam(value = "varietyCode") String varietyCode) {
-        ArrayList<String> batchList = new ArrayList<>();
+    public ResultWrapper<List<Batch>> getBatchListBySFV(@ApiParam(value = "生产季id") @RequestParam(value = "prodSeasonId") Integer prodSeasonId,
+                                                        @ApiParam(value = "田间号id") @RequestParam(value = "fieldId") Integer fieldId,
+                                                        @ApiParam(value = "品种id") @RequestParam(value = "varietyId", required = false) Integer varietyId) {
+        ArrayList<Batch> batchList = new ArrayList<>();
         ResultWrapper resultWrapper = new ResultWrapper();
         //TODO
         return resultWrapper;
@@ -34,10 +34,13 @@ public class BatchController {
     //添加批次
     @PostMapping(value = "/addBatch")
     @ApiOperation(value = "添加批次", notes = "添加批次")
-    public ResultWrapper addBatch(@ApiParam(value = "生产季编号") @RequestParam(value = "prodSeasonCode") String prodSeasonCode,
-                                  @ApiParam(value = "田间号") @RequestParam(value = "fieldCode") String fieldCode,
-                                  @ApiParam(value = "品种编号") @RequestParam(value = "varietyCode", required = false) String varietyCode,
-                                  @ApiParam(value = "日期") @RequestParam(value = "date") Date date) {
+    public ResultWrapper addBatch(@ApiParam(value = "日期") @RequestParam(value = "date") Date date,
+                                  @ApiParam(value = "生产季id") @RequestParam(value = "prodSeasonId") Integer prodSeasonId,
+                                  @ApiParam(value = "田间号id") @RequestParam(value = "fieldId") Integer fieldId,
+                                  @ApiParam(value = "品种id") @RequestParam(value = "varietyId", required = false) Integer varietyId
+//                                  @ApiParam(value = "请求消息id") @RequestParam(value = "requestMsgId") String requestMsgId,
+//                                  @ApiParam(value = "返回消息id") @RequestParam(value = "replyMsgId") String replyMsgId
+    ) {
         ResultWrapper resultWrapper = new ResultWrapper();
         //TODO
         return resultWrapper;
@@ -46,7 +49,7 @@ public class BatchController {
     //删除批次
     @PostMapping(value = "/deleteBatch")
     @ApiOperation(value = "删除批次", notes = "删除批次")
-    public ResultWrapper deleteBatch(@ApiParam(value = "批次编号") @RequestParam(value = "batchCode") String batchCode) {
+    public ResultWrapper deleteBatch(@ApiParam(value = "批次id") @RequestParam(value = "batchId") Integer batchId) {
         ResultWrapper resultWrapper = new ResultWrapper();
         //TODO
         return resultWrapper;
@@ -55,17 +58,17 @@ public class BatchController {
     //修改批次
     @PostMapping(value = "/updateBatch")
     @ApiOperation(value = "修改批次", notes = "修改批次")
-    public ResultWrapper updateBatch(@ApiParam(value = "批次编号") @RequestParam(value = "batchCode") String batchCode,
-                                     @ApiParam(value = "批次") @RequestParam(value = "batch") String batchData) {
+    public ResultWrapper updateBatch(@ApiParam(value = "批次id") @RequestParam(value = "batchId") Integer batchId,
+                                     @ApiParam(value = "批次参数") @RequestParam(value = "batchParams") String batchParams) {
         ResultWrapper resultWrapper = new ResultWrapper();
         //TODO
         return resultWrapper;
     }
 
     //批次编号 => 批次信息
-    @PostMapping(value = "/getBatchInfo")
-    @ApiOperation(value = "获取批次信息", notes = "依据批次编号获取批次信息")
-    public ResultWrapper<Batch> getBatchInfoId(@ApiParam(value = "批次编号") @RequestParam(value = "batchCode") String batchCode) {
+    @PostMapping(value = "/getBatchInfoById")
+    @ApiOperation(value = "获取批次信息", notes = "依据批次id获取批次信息")
+    public ResultWrapper<Batch> getBatchInfoById(@ApiParam(value = "批次id") @RequestParam(value = "batchId") Integer batchId) {
         ResultWrapper resultWrapper = new ResultWrapper();
         //TODO
         return resultWrapper;

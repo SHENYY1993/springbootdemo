@@ -20,8 +20,8 @@ import java.util.List;
 public class PlantBlockController {
     //批次编号 => 种植区块列表
     @PostMapping(value = "/getPlantBlockListByBatch")
-    @ApiOperation(value = "获取种植区块列表", notes = "依据批次编号获取种植区块列表")
-    public ResultWrapper<List<PlantBlock>> getPlantBlockListByBatch(@ApiParam(value = "批次编号") @RequestParam(value = "batchCode") String batchCode) {
+    @ApiOperation(value = "获取种植区块列表", notes = "依据批次id获取种植区块列表")
+    public ResultWrapper<List<PlantBlock>> getPlantBlockListByBatch(@ApiParam(value = "批次id") @RequestParam(value = "batchId") Integer batchId) {
         ArrayList<PlantBlock> plantBlockList = new ArrayList<>();
         ResultWrapper resultWrapper = new ResultWrapper();
         //TODO

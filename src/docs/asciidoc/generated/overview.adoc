@@ -1,0 +1,40 @@
+= 出苗率检测模块后台接口规范
+
+
+[[_overview]]
+== Overview
+接口说明
+
+
+=== Version information
+[%hardbreaks]
+__Version__ : 1.0
+
+
+=== License information
+[%hardbreaks]
+__Terms of service__ : http://localhost:8080/
+
+
+=== URI scheme
+[%hardbreaks]
+__Host__ : localhost:8080
+__BasePath__ : /
+
+
+=== Tags
+
+* SQS消息队列服务请求接口 : SQS Controller
+* 品种接口 : Variety Controller
+* 图片接口 : Pic Controller
+* 拍摄批次接口 : Batch Controller
+* 拼接图接口 : Splicing Image Controller
+* 标记物检测框接口 : Detect Marker Controller
+* 检测报告接口 : Report Controller
+* 植株检测框接口 : Detect Rect Controller
+* 生产季接口 : Prod Season Controller
+* 田间号（地块）接口 : Field Controller
+* 种植区块接口 : Plant Block Controller
+
+
+

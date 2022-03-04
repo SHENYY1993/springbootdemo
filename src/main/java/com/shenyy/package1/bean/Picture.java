@@ -3,16 +3,30 @@ package com.shenyy.package1.bean;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-@ApiModel(value = "PlantBlock", description = "种植区块数据类")
-public class PlantBlock {
-    @ApiModelProperty(value = "id",notes = "种植区块id")
+@ApiModel(value = "Picture", description = "图片数据类")
+public class Picture {
+    @ApiModelProperty(value = "id",notes = "图片id")
     private Integer id;
-    @ApiModelProperty(value = "批次id")
-    private Integer batchId;
-    @ApiModelProperty(value = "中心点纬度")
+    @ApiModelProperty(value = "图片名称")
+    private String picName;
+    @ApiModelProperty(value = "图片key")
+    private String picKey;
+    @ApiModelProperty(value = "图片url")
+    private String picUrl;
+    @ApiModelProperty(value = "纬度")
     private Double latitude;
-    @ApiModelProperty(value = "中心点经度")
+    @ApiModelProperty(value = "经度")
     private Double longitude;
+    @ApiModelProperty(value = "高度")
+    private Double altitude;
+    @ApiModelProperty(value = "偏航角")
+    private Double yaw;
+    @ApiModelProperty(value = "图片宽度（pix）")
+    private Integer width;
+    @ApiModelProperty(value = "图片高度（pix）")
+    private Integer height;
+    @ApiModelProperty(value = "图片状态（-2：识别错误 0：未上传 1：已上传 2：已识别）")
+    private Integer status;
     @ApiModelProperty(value = "左上角纬度")
     private Double topLeftLat;
     @ApiModelProperty(value = "左上角经度")
@@ -29,16 +43,22 @@ public class PlantBlock {
     private Double btmRightLat;
     @ApiModelProperty(value = "右下角经度")
     private Double btmRightLng;
-    @ApiModelProperty(value = "品种id")
-    private Integer varietyId;
-    @ApiModelProperty(value = "出苗数")
+    @ApiModelProperty(value = "批次id")
+    private Integer batchId;
+    @ApiModelProperty(value = "抽样点出苗数")
     private Integer emergenceNum;
-    @ApiModelProperty(value = "播种数")
-    private Integer seedNum;
-    @ApiModelProperty(value = "出苗率")
+    @ApiModelProperty(value = "抽样点出苗率")
     private Double emergenceRate;
-    @ApiModelProperty(value = "图片id")
-    private Integer picId;
+    @ApiModelProperty(value = "抽样点种植密度（株/公顷）")
+    private Double plantingDensityCal;
+
+    public String getPicKey() {
+        return picKey;
+    }
+
+    public void setPicKey(String picKey) {
+        this.picKey = picKey;
+    }
 
     public Integer getId() {
         return id;
@@ -48,12 +68,20 @@ public class PlantBlock {
         this.id = id;
     }
 
-    public Integer getBatchId() {
-        return batchId;
+    public String getPicName() {
+        return picName;
     }
 
-    public void setBatchId(Integer batchId) {
-        this.batchId = batchId;
+    public void setPicName(String picName) {
+        this.picName = picName;
+    }
+
+    public String getPicUrl() {
+        return picUrl;
+    }
+
+    public void setPicUrl(String picUrl) {
+        this.picUrl = picUrl;
     }
 
     public Double getLatitude() {
@@ -70,6 +98,46 @@ public class PlantBlock {
 
     public void setLongitude(Double longitude) {
         this.longitude = longitude;
+    }
+
+    public Double getAltitude() {
+        return altitude;
+    }
+
+    public void setAltitude(Double altitude) {
+        this.altitude = altitude;
+    }
+
+    public Double getYaw() {
+        return yaw;
+    }
+
+    public void setYaw(Double yaw) {
+        this.yaw = yaw;
+    }
+
+    public Integer getWidth() {
+        return width;
+    }
+
+    public void setWidth(Integer width) {
+        this.width = width;
+    }
+
+    public Integer getHeight() {
+        return height;
+    }
+
+    public void setHeight(Integer height) {
+        this.height = height;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     public Double getTopLeftLat() {
@@ -136,12 +204,12 @@ public class PlantBlock {
         this.btmRightLng = btmRightLng;
     }
 
-    public Integer getVarietyId() {
-        return varietyId;
+    public Integer getBatchId() {
+        return batchId;
     }
 
-    public void setVarietyId(Integer varietyId) {
-        this.varietyId = varietyId;
+    public void setBatchId(Integer batchId) {
+        this.batchId = batchId;
     }
 
     public Integer getEmergenceNum() {
@@ -152,14 +220,6 @@ public class PlantBlock {
         this.emergenceNum = emergenceNum;
     }
 
-    public Integer getSeedNum() {
-        return seedNum;
-    }
-
-    public void setSeedNum(Integer seedNum) {
-        this.seedNum = seedNum;
-    }
-
     public Double getEmergenceRate() {
         return emergenceRate;
     }
@@ -168,11 +228,11 @@ public class PlantBlock {
         this.emergenceRate = emergenceRate;
     }
 
-    public Integer getPicId() {
-        return picId;
+    public Double getPlantingDensityCal() {
+        return plantingDensityCal;
     }
 
-    public void setPicId(Integer picId) {
-        this.picId = picId;
+    public void setPlantingDensityCal(Double plantingDensityCal) {
+        this.plantingDensityCal = plantingDensityCal;
     }
 }

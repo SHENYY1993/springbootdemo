@@ -1,0 +1,582 @@
+
+[[_definitions]]
+== Definitions
+
+[[_batch]]
+=== Batch
+拍摄批次数据类
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**date** +
+__optional__|拍摄日期|string(date-time)
+|**fieldId** +
+__optional__|田间号id|integer(int32)
+|**id** +
+__optional__|id|integer(int32)
+|**prodSeasonId** +
+__optional__|生产季id|integer(int32)
+|**replyMsgId** +
+__optional__|返回消息id|string
+|**requestMsgId** +
+__optional__|请求消息id|string
+|**varietyId** +
+__optional__|品种id|integer(int32)
+|===
+
+
+[[_detectmarker]]
+=== DetectMarker
+标记物检测框数据类
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**btmRightY** +
+__optional__|右下角y坐标（pix）|integer(int32)
+|**btmRighttX** +
+__optional__|右下角x坐标（pix）|integer(int32)
+|**confidence** +
+__optional__|置信度|number(double)
+|**id** +
+__optional__|id|integer(int32)
+|**latitude** +
+__optional__|纬度|number(double)
+|**longitude** +
+__optional__|经度|number(double)
+|**picId** +
+__optional__|图片id|number(double)
+|**topLeftX** +
+__optional__|左上角x坐标（pix）|integer(int32)
+|**topLeftY** +
+__optional__|左上角y坐标（pix）|integer(int32)
+|===
+
+
+[[_detectrect]]
+=== DetectRect
+植株检测框数据类
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**blockId** +
+__optional__|种植区块id|number(double)
+|**btmRightY** +
+__optional__|右下角y坐标（pix）|integer(int32)
+|**btmRighttX** +
+__optional__|右下角x坐标（pix）|integer(int32)
+|**confidence** +
+__optional__|置信度|number(double)
+|**growthStage** +
+__optional__|生长阶段（{BEFORE_V1、V1、V2、V3、V4、AFTER_V4}）|string
+|**id** +
+__optional__|id|integer(int32)
+|**latitude** +
+__optional__|纬度|number(double)
+|**longitude** +
+__optional__|经度|number(double)
+|**picId** +
+__optional__|图片id|number(double)
+|**topLeftX** +
+__optional__|左上角x坐标（pix）|integer(int32)
+|**topLeftY** +
+__optional__|左上角y坐标（pix）|integer(int32)
+|===
+
+
+[[_9dd39ad0e16a5101dad1553366affc6f]]
+=== DetectReport«Picture»
+检测报告数据类
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**batchCode** +
+__optional__|品种编号|string
+|**batchId** +
+__optional__|批次id|integer(int32)
+|**dataList** +
+__optional__|种植区块数据列表|< <<_picture,Picture>> > array
+|**date** +
+__optional__|批次日期|string(date-time)
+|**fieldCode** +
+__optional__|田间号|string
+|**fieldPosition** +
+__optional__|地块位置信息|string
+|**id** +
+__optional__|id|integer(int32)
+|===
+
+
+[[_f3b538f2db82ba26506c9eef09a9bd54]]
+=== DetectReport«PlantBlock»
+检测报告数据类
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**batchCode** +
+__optional__|品种编号|string
+|**batchId** +
+__optional__|批次id|integer(int32)
+|**dataList** +
+__optional__|种植区块数据列表|< <<_plantblock,PlantBlock>> > array
+|**date** +
+__optional__|批次日期|string(date-time)
+|**fieldCode** +
+__optional__|田间号|string
+|**fieldPosition** +
+__optional__|地块位置信息|string
+|**id** +
+__optional__|id|integer(int32)
+|===
+
+
+[[_field]]
+=== Field
+田间号数据类
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**border** +
+__optional__|地块边界点列表|string
+|**fieldCode** +
+__optional__|田间号编号|string
+|**fieldType** +
+__optional__|地块类型（0：大田 1：试验田）|integer(int32)
+|**id** +
+__optional__|id|integer(int32)
+|**plantCourse** +
+__optional__|种植行方向|number(double)
+|**plantingDensity** +
+__optional__|种植密度（株/公顷）|integer(int32)
+|**prodSeasonId** +
+__optional__|生产季id|integer(int32)
+|**varietyId** +
+__optional__|品种id|integer(int32)
+|===
+
+
+[[_fe5293b8150fdf81185174959d77609c]]
+=== Map«string,string»
+__Type__ : < string, string > map
+
+
+[[_picture]]
+=== Picture
+图片数据类
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**altitude** +
+__optional__|高度|number(double)
+|**batchId** +
+__optional__|批次id|integer(int32)
+|**btmLeftLat** +
+__optional__|左下角纬度|number(double)
+|**btmLeftlng** +
+__optional__|左下角经度|number(double)
+|**btmRightLat** +
+__optional__|右下角纬度|number(double)
+|**btmRightLng** +
+__optional__|右下角经度|number(double)
+|**emergenceNum** +
+__optional__|抽样点出苗数|integer(int32)
+|**emergenceRate** +
+__optional__|抽样点出苗率|number(double)
+|**height** +
+__optional__|图片高度（pix）|integer(int32)
+|**id** +
+__optional__|id|integer(int32)
+|**latitude** +
+__optional__|纬度|number(double)
+|**longitude** +
+__optional__|经度|number(double)
+|**picKey** +
+__optional__|图片key|string
+|**picName** +
+__optional__|图片名称|string
+|**picUrl** +
+__optional__|图片url|string
+|**plantingDensityCal** +
+__optional__|抽样点种植密度（株/公顷）|number(double)
+|**status** +
+__optional__|图片状态（-2：识别错误 0：未上传 1：已上传 2：已识别）|integer(int32)
+|**topLeftLat** +
+__optional__|左上角纬度|number(double)
+|**topLeftlng** +
+__optional__|左上角经度|number(double)
+|**topRightLat** +
+__optional__|右上角纬度|number(double)
+|**topRightLng** +
+__optional__|右上角经度|number(double)
+|**width** +
+__optional__|图片宽度（pix）|integer(int32)
+|**yaw** +
+__optional__|偏航角|number(double)
+|===
+
+
+[[_plantblock]]
+=== PlantBlock
+种植区块数据类
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**batchId** +
+__optional__|批次id|integer(int32)
+|**btmLeftLat** +
+__optional__|左下角纬度|number(double)
+|**btmLeftlng** +
+__optional__|左下角经度|number(double)
+|**btmRightLat** +
+__optional__|右下角纬度|number(double)
+|**btmRightLng** +
+__optional__|右下角经度|number(double)
+|**emergenceNum** +
+__optional__|出苗数|integer(int32)
+|**emergenceRate** +
+__optional__|出苗率|number(double)
+|**id** +
+__optional__|id|integer(int32)
+|**latitude** +
+__optional__|中心点纬度|number(double)
+|**longitude** +
+__optional__|中心点经度|number(double)
+|**picId** +
+__optional__|图片id|integer(int32)
+|**seedNum** +
+__optional__|播种数|integer(int32)
+|**topLeftLat** +
+__optional__|左上角纬度|number(double)
+|**topLeftlng** +
+__optional__|左上角经度|number(double)
+|**topRightLat** +
+__optional__|右上角纬度|number(double)
+|**topRightLng** +
+__optional__|右上角经度|number(double)
+|**varietyId** +
+__optional__|品种id|integer(int32)
+|===
+
+
+[[_resultwrapper]]
+=== ResultWrapper
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**code** +
+__optional__|string
+|**message** +
+__optional__|string
+|**result** +
+__optional__|object
+|**succese** +
+__optional__|boolean
+|===
+
+
+[[_4206b3433e0f95e5b12987aa97e69d7f]]
+=== ResultWrapper«Batch»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**code** +
+__optional__|string
+|**message** +
+__optional__|string
+|**result** +
+__optional__|<<_batch,Batch>>
+|**succese** +
+__optional__|boolean
+|===
+
+
+[[_cbdb5aeadb6f41be0c35679771e72bfe]]
+=== ResultWrapper«DetectReport«Picture»»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**code** +
+__optional__|string
+|**message** +
+__optional__|string
+|**result** +
+__optional__|<<_9dd39ad0e16a5101dad1553366affc6f,DetectReport«Picture»>>
+|**succese** +
+__optional__|boolean
+|===
+
+
+[[_43f85f1c0724c98d8b3453b09bc2a77d]]
+=== ResultWrapper«DetectReport«PlantBlock»»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**code** +
+__optional__|string
+|**message** +
+__optional__|string
+|**result** +
+__optional__|<<_f3b538f2db82ba26506c9eef09a9bd54,DetectReport«PlantBlock»>>
+|**succese** +
+__optional__|boolean
+|===
+
+
+[[_97b9ddeb533bbf226c3d86cca2c80791]]
+=== ResultWrapper«Field»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**code** +
+__optional__|string
+|**message** +
+__optional__|string
+|**result** +
+__optional__|<<_field,Field>>
+|**succese** +
+__optional__|boolean
+|===
+
+
+[[_114932eb3fd786ffafea225e90d220da]]
+=== ResultWrapper«List«Batch»»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**code** +
+__optional__|string
+|**message** +
+__optional__|string
+|**result** +
+__optional__|< <<_batch,Batch>> > array
+|**succese** +
+__optional__|boolean
+|===
+
+
+[[_6120655ff219d405dada1b9bed3255b5]]
+=== ResultWrapper«List«DetectMarker»»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**code** +
+__optional__|string
+|**message** +
+__optional__|string
+|**result** +
+__optional__|< <<_detectmarker,DetectMarker>> > array
+|**succese** +
+__optional__|boolean
+|===
+
+
+[[_c2aaf843af3865bf2196459b7cd24398]]
+=== ResultWrapper«List«DetectRect»»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**code** +
+__optional__|string
+|**message** +
+__optional__|string
+|**result** +
+__optional__|< <<_detectrect,DetectRect>> > array
+|**succese** +
+__optional__|boolean
+|===
+
+
+[[_549a96819d00878ede1be9fa3733082a]]
+=== ResultWrapper«List«Field»»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**code** +
+__optional__|string
+|**message** +
+__optional__|string
+|**result** +
+__optional__|< <<_field,Field>> > array
+|**succese** +
+__optional__|boolean
+|===
+
+
+[[_eb50fb7f942636e268aab2a79bb0c3c8]]
+=== ResultWrapper«List«Map«string,string»»»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**code** +
+__optional__|string
+|**message** +
+__optional__|string
+|**result** +
+__optional__|< <<_fe5293b8150fdf81185174959d77609c,Map«string,string»>> > array
+|**succese** +
+__optional__|boolean
+|===
+
+
+[[_c2d0bc8998574bbb67e6754d7c9fddac]]
+=== ResultWrapper«List«Picture»»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**code** +
+__optional__|string
+|**message** +
+__optional__|string
+|**result** +
+__optional__|< <<_picture,Picture>> > array
+|**succese** +
+__optional__|boolean
+|===
+
+
+[[_463fa8b0460b959ed1ff5377d3d6b65b]]
+=== ResultWrapper«List«PlantBlock»»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**code** +
+__optional__|string
+|**message** +
+__optional__|string
+|**result** +
+__optional__|< <<_plantblock,PlantBlock>> > array
+|**succese** +
+__optional__|boolean
+|===
+
+
+[[_c0bad14e7e2fa5704a92532b7bc6ff9d]]
+=== ResultWrapper«Picture»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**code** +
+__optional__|string
+|**message** +
+__optional__|string
+|**result** +
+__optional__|<<_picture,Picture>>
+|**succese** +
+__optional__|boolean
+|===
+
+
+[[_4ce4fb5b5fb23a533aa9335f632a7e5f]]
+=== ResultWrapper«PlantBlock»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**code** +
+__optional__|string
+|**message** +
+__optional__|string
+|**result** +
+__optional__|<<_plantblock,PlantBlock>>
+|**succese** +
+__optional__|boolean
+|===
+
+
+[[_ea557f0d7b15d8ed5a65df4a67a486c5]]
+=== ResultWrapper«SplicingImage»
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**code** +
+__optional__|string
+|**message** +
+__optional__|string
+|**result** +
+__optional__|<<_splicingimage,SplicingImage>>
+|**succese** +
+__optional__|boolean
+|===
+
+
+[[_splicingimage]]
+=== SplicingImage
+拼接图数据类
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**altitude** +
+__optional__|高度|number(double)
+|**batchId** +
+__optional__|批次id|integer(int32)
+|**btmLeftLat** +
+__optional__|左下角纬度|number(double)
+|**btmLeftlng** +
+__optional__|左下角经度|number(double)
+|**btmRightLat** +
+__optional__|右下角纬度|number(double)
+|**btmRightLng** +
+__optional__|右下角经度|number(double)
+|**height** +
+__optional__|图片高度（pix）|integer(int32)
+|**id** +
+__optional__|id|integer(int32)
+|**latitude** +
+__optional__|纬度|number(double)
+|**longitude** +
+__optional__|经度|number(double)
+|**splicingImageKey** +
+__optional__|拼接图key|string
+|**splicingImageName** +
+__optional__|拼接图名称|string
+|**splicingImageUrl** +
+__optional__|拼接图url|string
+|**status** +
+__optional__|图片状态（-2：生成错误 0：未上传 1：生成中 2：已生成）|integer(int32)
+|**topLeftLat** +
+__optional__|左上角纬度|number(double)
+|**topLeftlng** +
+__optional__|左上角经度|number(double)
+|**topRightLat** +
+__optional__|右上角纬度|number(double)
+|**topRightLng** +
+__optional__|右上角经度|number(double)
+|**width** +
+__optional__|图片宽度（pix）|integer(int32)
+|**yaw** +
+__optional__|偏航角|number(double)
+|===
+
+
+

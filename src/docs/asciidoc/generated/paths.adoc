@@ -1,0 +1,1949 @@
+
+[[_paths]]
+== Paths
+
+[[_addbatchusingpost]]
+=== 添加批次
+....
+POST /batch/addBatch
+....
+
+
+==== Description
+添加批次
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**date** +
+__optional__|日期|string(date-time)
+|**Query**|**fieldId** +
+__optional__|田间号id|integer(int32)
+|**Query**|**prodSeasonId** +
+__optional__|生产季id|integer(int32)
+|**Query**|**varietyId** +
+__optional__|品种id|integer(int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultwrapper,ResultWrapper>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 拍摄批次接口
+
+
+[[_deletebatchusingpost]]
+=== 删除批次
+....
+POST /batch/deleteBatch
+....
+
+
+==== Description
+删除批次
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**batchId** +
+__optional__|批次id|integer(int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultwrapper,ResultWrapper>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 拍摄批次接口
+
+
+[[_getbatchinfobyidusingpost]]
+=== 获取批次信息
+....
+POST /batch/getBatchInfoById
+....
+
+
+==== Description
+依据批次id获取批次信息
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**batchId** +
+__optional__|批次id|integer(int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_4206b3433e0f95e5b12987aa97e69d7f,ResultWrapper«Batch»>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 拍摄批次接口
+
+
+[[_getbatchlistbysfvusingpost]]
+=== 获取批次列表
+....
+POST /batch/getBatchListBySFV
+....
+
+
+==== Description
+依据生产季&amp;田间号&amp;品种获取批次列表
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**fieldId** +
+__optional__|田间号id|integer(int32)
+|**Query**|**prodSeasonId** +
+__optional__|生产季id|integer(int32)
+|**Query**|**varietyId** +
+__optional__|品种id|integer(int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_114932eb3fd786ffafea225e90d220da,ResultWrapper«List«Batch»»>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 拍摄批次接口
+
+
+[[_updatebatchusingpost]]
+=== 修改批次
+....
+POST /batch/updateBatch
+....
+
+
+==== Description
+修改批次
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**batchId** +
+__optional__|批次id|integer(int32)
+|**Query**|**batchParams** +
+__optional__|批次参数|string
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultwrapper,ResultWrapper>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 拍摄批次接口
+
+
+[[_adddetectmarkerusingpost]]
+=== 添加标记物检测框
+....
+POST /detectMarker/addDetectMarker
+....
+
+
+==== Description
+添加标记物检测框
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**btmRightX** +
+__optional__|右下角x坐标（pix）|integer(int32)
+|**Query**|**btmRightY** +
+__optional__|右下角y坐标（pix）|integer(int32)
+|**Query**|**confidence** +
+__optional__|置信度|number(double)
+|**Query**|**latitude** +
+__optional__|纬度|number(double)
+|**Query**|**longitude** +
+__optional__|经度|number(double)
+|**Query**|**picId** +
+__optional__|图片id|integer(int32)
+|**Query**|**topLeftX** +
+__optional__|左上角x坐标（pix）|integer(int32)
+|**Query**|**topLeftY** +
+__optional__|左上角y坐标（pix）|integer(int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultwrapper,ResultWrapper>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 标记物检测框接口
+
+
+[[_deletedetectmarkerusingpost]]
+=== 删除标记物检测框
+....
+POST /detectMarker/deleteDetectMarker
+....
+
+
+==== Description
+删除标记物检测框
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**detectMarkerId** +
+__optional__|标记物检测框id|integer(int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultwrapper,ResultWrapper>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 标记物检测框接口
+
+
+[[_getdetectmarkerlistbypicidusingpost]]
+=== 获取标记物检测框
+....
+POST /detectMarker/getDetectMarkerListByPicId
+....
+
+
+==== Description
+依据图片id查询标记物检测框列表
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**picId** +
+__optional__|图片id|integer(int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_6120655ff219d405dada1b9bed3255b5,ResultWrapper«List«DetectMarker»»>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 标记物检测框接口
+
+
+[[_updatedetectmarkerusingpost]]
+=== 修改标记物检测框
+....
+POST /detectMarker/updateDetectMarker
+....
+
+
+==== Description
+修改标记物检测框
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**detectMarkerId** +
+__optional__|标记物检测框id|integer(int32)
+|**Query**|**detectMarkerParams** +
+__optional__|标记物检测框参数|string
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultwrapper,ResultWrapper>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 标记物检测框接口
+
+
+[[_adddetectrectusingpost]]
+=== 添加单个检测框
+....
+POST /detectRect/addDetectRect
+....
+
+
+==== Description
+添加检测框
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**blockId** +
+__optional__|种植区块id|integer(int32)
+|**Query**|**btmRightX** +
+__optional__|右下角x坐标（pix）|integer(int32)
+|**Query**|**btmRightY** +
+__optional__|右下角y坐标（pix）|integer(int32)
+|**Query**|**confidence** +
+__optional__|置信度|number(double)
+|**Query**|**growthStage** +
+__optional__|生长阶段|string
+|**Query**|**latitude** +
+__optional__|纬度|number(double)
+|**Query**|**longitude** +
+__optional__|经度|number(double)
+|**Query**|**picId** +
+__optional__|图片id|integer(int32)
+|**Query**|**topLeftX** +
+__optional__|左上角x坐标（pix）|integer(int32)
+|**Query**|**topLeftY** +
+__optional__|左上角y坐标（pix）|integer(int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultwrapper,ResultWrapper>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 植株检测框接口
+
+
+[[_deletedetectrectusingpost]]
+=== 删除植株检测框
+....
+POST /detectRect/deleteDetectRect
+....
+
+
+==== Description
+删除植株检测框
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**detectRectId** +
+__optional__|植株检测框id|integer(int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultwrapper,ResultWrapper>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 植株检测框接口
+
+
+[[_getdetectrectlistbyblockidusingpost]]
+=== 获取植株检测框
+....
+POST /detectRect/getDetectRectListByBlockId
+....
+
+
+==== Description
+依据种植区块id查询植株检测框列表
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**blockId** +
+__optional__|种植区块id|integer(int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_c2aaf843af3865bf2196459b7cd24398,ResultWrapper«List«DetectRect»»>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 植株检测框接口
+
+
+[[_getdetectrectlistbypicidusingpost]]
+=== 获取植株检测框
+....
+POST /detectRect/getDetectRectListByPicId
+....
+
+
+==== Description
+依据图片id查询植株检测框列表
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**picId** +
+__optional__|图片id|integer(int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_c2aaf843af3865bf2196459b7cd24398,ResultWrapper«List«DetectRect»»>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 植株检测框接口
+
+
+[[_updatepictureusingpost]]
+=== 修改植株检测框
+....
+POST /detectRect/updateDetectRect
+....
+
+
+==== Description
+修改植株检测框
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**detectRectId** +
+__optional__|植株检测框id|integer(int32)
+|**Query**|**detectRectParams** +
+__optional__|植株检测框参数|string
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultwrapper,ResultWrapper>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 植株检测框接口
+
+
+[[_getfieldlistbysvusingpost]]
+=== 依据生产季&品种获取田间号列表
+....
+POST /field/getFieldListBySV
+....
+
+
+==== Description
+获取田间号列表
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**prodSeasonCode** +
+__optional__|生产季编号|string
+|**Query**|**varietyCode** +
+__optional__|品种编号|string
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_549a96819d00878ede1be9fa3733082a,ResultWrapper«List«Field»»>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 田间号（地块）接口
+
+
+[[_getfieldlistbyseasonusingpost]]
+=== 依据生产季获取田间号列表
+....
+POST /field/getFieldListBySeason
+....
+
+
+==== Description
+获取田间号列表
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**prodSeasonCode** +
+__optional__|生产季编号|string
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_549a96819d00878ede1be9fa3733082a,ResultWrapper«List«Field»»>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 田间号（地块）接口
+
+
+[[_getfieldlistbyvarietyusingpost]]
+=== 依据品种获取田间号列表
+....
+POST /field/getFieldListByVariety
+....
+
+
+==== Description
+获取田间号列表
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**varietyCode** +
+__optional__|品种编号|string
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_549a96819d00878ede1be9fa3733082a,ResultWrapper«List«Field»»>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 田间号（地块）接口
+
+
+[[_getsinglefieldinfousingpost]]
+=== 依据品种获取田间号列表
+....
+POST /field/getSingleFieldInfo
+....
+
+
+==== Description
+获取田间号列表
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**fieldCode** +
+__optional__|田间号|string
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_97b9ddeb533bbf226c3d86cca2c80791,ResultWrapper«Field»>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 田间号（地块）接口
+
+
+[[_addpicturesusingpost]]
+=== 添加图片
+....
+POST /picture/addPictures
+....
+
+
+==== Description
+添加图片
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**batchId** +
+__optional__|批次id|integer(int32)
+|**Query**|**date** +
+__optional__|批次日期|string(date-time)
+|**Query**|**fieldId** +
+__optional__|田间号id|integer(int32)
+|**Query**|**picNameList** +
+__optional__|图片名称列表|string
+|**Query**|**prodSeasonId** +
+__optional__|生产季id|integer(int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_eb50fb7f942636e268aab2a79bb0c3c8,ResultWrapper«List«Map«string,string»»»>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 图片接口
+
+
+[[_deletepictureusingpost]]
+=== 删除图片
+....
+POST /picture/deletePicture
+....
+
+
+==== Description
+删除图片
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**picId** +
+__optional__|图片id|integer(int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultwrapper,ResultWrapper>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 图片接口
+
+
+[[_getpicturebybatchandblockusingpost]]
+=== 获取图片
+....
+POST /picture/getPictureByBatchandBlock
+....
+
+
+==== Description
+依据批次id和种植区块id获取图片
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**batchId** +
+__optional__|批次id|integer(int32)
+|**Query**|**plantBlockId** +
+__optional__|种植区块id|integer(int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_c0bad14e7e2fa5704a92532b7bc6ff9d,ResultWrapper«Picture»>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 图片接口
+
+
+[[_getpicturebyidusingpost]]
+=== 获取图片
+....
+POST /picture/getPictureById
+....
+
+
+==== Description
+依据图片id获取图片
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**pictureId** +
+__optional__|图片id|integer(int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_c0bad14e7e2fa5704a92532b7bc6ff9d,ResultWrapper«Picture»>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 图片接口
+
+
+[[_getpicturelistbybatchusingpost]]
+=== 获取图片列表
+....
+POST /picture/getPictureListByBatch
+....
+
+
+==== Description
+依据批次id获取图片列表
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**batchId** +
+__optional__|批次id|integer(int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_c2d0bc8998574bbb67e6754d7c9fddac,ResultWrapper«List«Picture»»>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 图片接口
+
+
+[[_updatepictureusingpost_1]]
+=== 修改图片
+....
+POST /picture/updatePicture
+....
+
+
+==== Description
+修改图片
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**picId** +
+__optional__|图片id|integer(int32)
+|**Query**|**picParams** +
+__optional__|图片参数|string
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultwrapper,ResultWrapper>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 图片接口
+
+
+[[_addplantblockusingpost]]
+=== 添加种植区块
+....
+POST /plantBlock/addPlantBlock
+....
+
+
+==== Description
+添加种植区块
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**batchId** +
+__optional__|批次id|string
+|**Query**|**coordinateParams** +
+__optional__|四角经纬度坐标|string
+|**Query**|**emergenceNum** +
+__optional__|出苗数|integer(int32)
+|**Query**|**emergenceRate** +
+__optional__|出苗率|number(double)
+|**Query**|**latitude** +
+__optional__|中心点纬度|number(double)
+|**Query**|**longitude** +
+__optional__|中心点经度|number(double)
+|**Query**|**picId** +
+__optional__|图片id|integer(int32)
+|**Query**|**seedNum** +
+__optional__|播种数|integer(int32)
+|**Query**|**varietyId** +
+__optional__|品种id|string
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultwrapper,ResultWrapper>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 种植区块接口
+
+
+[[_deleteplantblockusingpost]]
+=== 删除种植区块
+....
+POST /plantBlock/deletePlantBlock
+....
+
+
+==== Description
+删除种植区块
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**plantBlockId** +
+__optional__|种植区块id|integer(int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultwrapper,ResultWrapper>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 种植区块接口
+
+
+[[_getplantblockinfobyidusingpost]]
+=== 获取种植区块信息
+....
+POST /plantBlock/getPlantBlockInfoById
+....
+
+
+==== Description
+依据种植区块id获取种植区块信息
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**plantBlockId** +
+__optional__|种植区块id|string
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_4ce4fb5b5fb23a533aa9335f632a7e5f,ResultWrapper«PlantBlock»>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 种植区块接口
+
+
+[[_getplantblocklistbybatchusingpost]]
+=== 获取种植区块列表
+....
+POST /plantBlock/getPlantBlockListByBatch
+....
+
+
+==== Description
+依据批次id获取种植区块列表
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**batchId** +
+__optional__|批次id|integer(int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_463fa8b0460b959ed1ff5377d3d6b65b,ResultWrapper«List«PlantBlock»»>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 种植区块接口
+
+
+[[_updateplantblockusingpost]]
+=== 修改种植区块
+....
+POST /plantBlock/updatePlantBlock
+....
+
+
+==== Description
+修改种植区块
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**plantBlockId** +
+__optional__|种植区块id|integer(int32)
+|**Query**|**plantBlockParams** +
+__optional__|种植区块参数|string
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultwrapper,ResultWrapper>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 种植区块接口
+
+
+[[_getseasonlistusingpost]]
+=== 获取生产季列表
+....
+POST /prodSeason/getSeasonList
+....
+
+
+==== Description
+获取全部生产季编号
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|< string > array
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 生产季接口
+
+
+[[_getprodfielddetectreportbybatchusingpost]]
+=== 获取大田所选批次检测报告
+....
+POST /report/getProdFieldDetectReportByBatch
+....
+
+
+==== Description
+依据批次id获取大田所选批次检测报告
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**batchId** +
+__optional__|批次id|integer(int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_cbdb5aeadb6f41be0c35679771e72bfe,ResultWrapper«DetectReport«Picture»»>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 检测报告接口
+
+
+[[_gettestfielddetectreportbybatchusingpost]]
+=== 获取试验田所选批次检测报告
+....
+POST /report/getTestFieldDetectReportByBatch
+....
+
+
+==== Description
+依据批次id获取试验田所选批次检测报告
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**batchId** +
+__optional__|批次id|integer(int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_43f85f1c0724c98d8b3453b09bc2a77d,ResultWrapper«DetectReport«PlantBlock»»>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 检测报告接口
+
+
+[[_addsplicingimageusingpost]]
+=== 添加拼接图
+....
+POST /splicingImage/addSplicingImage
+....
+
+
+==== Description
+添加拼接图
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**altitude** +
+__optional__|高度|number(double)
+|**Query**|**batchId** +
+__optional__|批次id|integer(int32)
+|**Query**|**coordinateParams** +
+__optional__|四角经纬度坐标|string
+|**Query**|**height** +
+__optional__|图片高度（pix）|integer(int32)
+|**Query**|**latitude** +
+__optional__|纬度|number(double)
+|**Query**|**longitude** +
+__optional__|经度|number(double)
+|**Query**|**splicingImageKey** +
+__optional__|图片key|string
+|**Query**|**splicingImageName** +
+__optional__|图片名称|string
+|**Query**|**splicingImageUrl** +
+__optional__|图片url|string
+|**Query**|**status** +
+__optional__|图片状态|integer(int32)
+|**Query**|**width** +
+__optional__|图片宽度（pix）|integer(int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultwrapper,ResultWrapper>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 拼接图接口
+
+
+[[_deletesplicingimageusingpost]]
+=== 删除拼接图
+....
+POST /splicingImage/deleteSplicingImage
+....
+
+
+==== Description
+删除拼接图
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**picId** +
+__optional__|拼接图id|integer(int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultwrapper,ResultWrapper>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 拼接图接口
+
+
+[[_getsplicingimagebyidusingpost]]
+=== 获取拼接图
+....
+POST /splicingImage/getSplicingImageById
+....
+
+
+==== Description
+依据拼接图id获取拼接图
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**splicingImageId** +
+__optional__|拼接图id|string
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_ea557f0d7b15d8ed5a65df4a67a486c5,ResultWrapper«SplicingImage»>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 拼接图接口
+
+
+[[_updatesplicingimageusingpost]]
+=== 修改拼接图
+....
+POST /splicingImage/updateSplicingImage
+....
+
+
+==== Description
+修改拼接图
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**splicingImageId** +
+__optional__|拼接图id|integer(int32)
+|**Query**|**splicingImageParams** +
+__optional__|拼接图参数|string
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultwrapper,ResultWrapper>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 拼接图接口
+
+
+[[_sendbatchsqsmessageusingpost]]
+=== 批次图片SQS消息队列服务请求
+....
+POST /sqsController/sendBatchSQSMessage
+....
+
+
+==== Description
+依据批次id批次图片SQS消息队列服务请求
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**batchId** +
+__optional__|批次id|integer(int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_resultwrapper,ResultWrapper>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* SQS消息队列服务请求接口
+
+
+[[_getvarietylistusingpost]]
+=== 获取品种列表
+....
+POST /variety/getVarietyList
+....
+
+
+==== Description
+获取全部品种编号
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|< string > array
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 品种接口
+
+
+
